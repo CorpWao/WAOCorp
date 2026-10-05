@@ -1455,6 +1455,91 @@ a.contact-info-value:hover::after { width: 100%; }
 }
 
 /* ==========================================================================
+   Legal pages (legal.html, privacy.html)
+   ========================================================================== */
+
+.footer-legal { display: flex; gap: 22px; }
+.footer-legal a {
+  color: var(--grey-soft);
+  transition: color 0.3s ease;
+}
+.footer-legal a:hover { color: var(--paper); }
+
+.legal-back {
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+.legal-back:hover { border-bottom-color: var(--ink); }
+
+.legal-page {
+  padding-top: clamp(130px, 18vw, 200px);
+  padding-bottom: var(--section-pad);
+}
+
+.legal-page h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  line-height: 1.02;
+  margin-top: 20px;
+}
+
+.legal-meta {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--grey);
+}
+
+.legal-body {
+  max-width: 68ch;
+  margin-top: clamp(40px, 6vw, 72px);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.legal-body section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.legal-body h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+
+.legal-body p,
+.legal-body li {
+  line-height: 1.65;
+}
+
+.legal-body ul { display: flex; flex-direction: column; gap: 8px; }
+.legal-body li { padding-left: 18px; position: relative; }
+.legal-body li::before { content: '—'; position: absolute; left: 0; color: var(--grey); }
+
+.legal-body a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.todo {
+  background: var(--yellow);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+}
+
+/* ==========================================================================
    Custom cursor (desktop, pointer:fine only)
    ========================================================================== */
 

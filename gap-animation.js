@@ -402,13 +402,19 @@
     elProg.style.transform = 'scaleX(' + p.toFixed(4) + ')';
   }
 
+  var fr = (document.documentElement.lang || '').toLowerCase().indexOf('fr') === 0;
+  var T = fr
+    ? { summit: 'Sommet', whiteout: 'Voile blanc, allure maintenue', ascending: 'En ascension', num: 'fr-FR' }
+    : { summit: 'Summit', whiteout: 'Whiteout, holding pace', ascending: 'Ascending', num: 'en-US' };
+
   function readouts() {
-    elAlt.textContent = Math.round(3650 + p * 1158).toLocaleString('en-US') + ' m';
+    elAlt.textContent = Math.round(3650 + p * 1158).toLocaleString(T.num) + ' m';
     elWind.textContent = Math.round(14 + sevS * 112 + (nS(time * 0.8) - 0.5) * 10) + ' km/h';
     var vis = 25 + 2600 * Math.pow(1 - sevS, 2.2);
-    elVis.textContent = vis >= 1000 ? (vis / 1000).toFixed(1) + ' km' : (Math.round(vis / 5) * 5) + ' m';
+    var visKm = (vis / 1000).toFixed(1);
+    elVis.textContent = vis >= 1000 ? (fr ? visKm.replace('.', ',') : visKm) + ' km' : (Math.round(vis / 5) * 5) + ' m';
     if (sevS > 0.6) whiteout = true; else if (sevS < 0.5) whiteout = false;
-    elState.textContent = phase >= 1 ? 'Summit' : whiteout ? 'Whiteout, holding pace' : 'Ascending';
+    elState.textContent = phase >= 1 ? T.summit : whiteout ? T.whiteout : T.ascending;
   }
 
   /* ---------- loop ---------- */

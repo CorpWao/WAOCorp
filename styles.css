@@ -1455,6 +1455,31 @@ a.contact-info-value:hover::after { width: 100%; }
 }
 
 /* ==========================================================================
+   Language switch (EN | FR)
+   ========================================================================== */
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+.lang-switch span,
+.lang-switch a {
+  padding: 7px 9px;
+  border-radius: 999px;
+  line-height: 1;
+}
+.lang-switch span { background: var(--ink); color: var(--paper); }
+.lang-switch a { color: var(--grey); transition: color 0.3s ease; }
+.lang-switch a:hover { color: var(--ink); }
+
+/* French headlines run longer than the English ones */
+html[lang="fr"] .hero h1 { font-size: clamp(2.2rem, 5.2vw, 4.9rem); }
+
+/* ==========================================================================
    Legal pages (legal.html, privacy.html)
    ========================================================================== */
 

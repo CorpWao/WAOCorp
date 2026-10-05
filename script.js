@@ -167,8 +167,11 @@
     var devisError = document.getElementById('devis-error');
     var devisSubmit = devisForm.querySelector('button[type="submit"]');
 
+    var isFr = (document.documentElement.lang || '').toLowerCase().indexOf('fr') === 0;
     var showDevisError = function () {
-      devisError.textContent = 'Your message could not be sent. Please email us directly at corp.wao@gmail.com.';
+      devisError.textContent = isFr
+        ? "Votre message n'a pas pu être envoyé. Écrivez-nous directement à corp.wao@gmail.com."
+        : 'Your message could not be sent. Please email us directly at corp.wao@gmail.com.';
       devisError.hidden = false;
     };
 

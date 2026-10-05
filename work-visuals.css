@@ -1,0 +1,78 @@
+/* Art-directed case-study placeholders — composed, not photographic.
+   Imported by styles.css once the base stylesheet is stable to edit. */
+
+.work-visual--1, .work-visual--2, .work-visual--3 { position: absolute; inset: 0; }
+
+.work-visual--1 {
+  background: linear-gradient(155deg, #EDE9DE 0%, #F5F3EE 55%, #F5F3EE 100%);
+}
+.work-visual--1::before {
+  content: '';
+  position: absolute;
+  width: 62%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--pink);
+  top: 14%;
+  left: 22%;
+  opacity: 0.55;
+}
+.work-visual--1::after {
+  content: 'AUBE';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 18vw;
+  color: var(--black);
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+}
+
+.work-visual--2 {
+  background: var(--charcoal);
+}
+.work-visual--2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(90deg, transparent 0 calc(100% / 7 - 1px), var(--line-on-dark) calc(100% / 7 - 1px) calc(100% / 7));
+}
+.work-visual--2::after {
+  content: 'NOROI';
+  position: absolute;
+  left: 8%;
+  bottom: 8%;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 12vw;
+  color: var(--green);
+  line-height: 0.9;
+}
+
+.work-visual--3 {
+  background: linear-gradient(20deg, transparent 48%, var(--yellow) 48% 52%, transparent 52%), var(--paper-alt);
+}
+.work-visual--3::before {
+  content: '';
+  position: absolute;
+  width: 38%;
+  height: 68%;
+  border: 1.5px solid var(--black);
+  top: 16%;
+  right: 14%;
+}
+.work-visual--3::after {
+  content: 'FELT';
+  position: absolute;
+  left: 8%;
+  top: 10%;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 11vw;
+  color: var(--black);
+  line-height: 0.9;
+}
